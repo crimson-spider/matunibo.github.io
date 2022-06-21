@@ -141,12 +141,12 @@ title: test
     <div class="anno">
       <h2>Primo anno</h2>
       <hr />
-     {% assign doclist = site.data.navigation %}
-       {% for doc in doclist %}
-       <a href="{{ item.link }}"
-          >{{doc.name}}</a
-       >
-       {% endfor %}
+      {% for file in site.static_files %}
+      {% if file.extname == ".pdf" -%}
+      * [{{ file.path }}]({{ site.baseurl }}{{ file.path }})
+      {%- endif %}
+      {% endfor %}
+
     </div>
 
 
