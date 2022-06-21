@@ -139,16 +139,12 @@ title: test
     </div>
 
     <div class="anno">
-      {% assign doclist = site.pages %}
-      <ul>
-        {% for doc in doclist %}
-        <li><a href="{{ site.baseurl }}{{ doc.url }}">{{ doc.url }}</a></li>
-
-        <a href="{{ site.baseurl }}{{ doc.url }}"
-           >{{doc.name}}</a
-        >
-        {% endfor %}
-      </ul>
+     {% assign doclist = site.pages %}
+       {% for doc in doclist %}
+       <a href="{{ site.baseurl }}{{ doc.url }}"
+          >{{doc.name}}</a
+       >
+       {% endfor %}
     </div>
 
 
