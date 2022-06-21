@@ -137,8 +137,8 @@
     <div class="anno">
       <h2>Primo anno</h2>
       <hr />
-      <a href="https://crimson-spider.github.io/matunibo-content/testdir"
-        >Algoritmi e strutture di dati</a
+      <a href="https://crimson-spider.github.io/"
+        >Test</a
       >
       <a href="https://matunibo.github.io/algebra-e-geometria/"
         >Algebra e geometria</a
@@ -156,6 +156,16 @@
         >Architettura degli elaboratori(WIP)</a
       >
     </div>
+
+   {% assign doclist = site.pages | sort: 'url'  %}
+    <ul>
+       {% for doc in doclist %}
+            {% if doc.name contains '.md' or doc.name contains '.html' %}
+                <li><a href="{{ site.baseurl }}{{ doc.url }}">{{ doc.url }}</a></li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+
     <div class="anno">
       <h2>Secondo anno</h2>
       <hr />
