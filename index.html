@@ -139,9 +139,9 @@ title: test
     </div>
 
     <div class="anno">
-     {% assign doclist = site.pages %}
+     {% assign doclist = site.data.navigation %}
        {% for doc in doclist %}
-       <a href="{{ site.baseurl }}{{ doc.url }}"
+       <a href="{{ item.link }}"
           >{{doc.name}}</a
        >
        {% endfor %}
