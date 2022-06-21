@@ -139,40 +139,24 @@ title: test
     </div>
 
     <div class="anno">
-      <h2>Primo anno</h2>
-      <hr />
-      <a href="https://crimson-spider.github.io/"
-        >Test</a
-      >
-      <a href="https://matunibo.github.io/algebra-e-geometria/"
-        >Algebra e geometria</a
-      >
-      <a href="https://matunibo.github.io/programmazione/">Programmazione</a>
-      <a href="https://matunibo.github.io/analisi-matematica/"
-        >Analisi matematica</a
-      >
-      <a href="https://matunibo.github.io/logica-per-l-informatica/" class="wip"
-        >Logica per l'informatica(WIP)</a
-      >
-      <a
-        href="https://matunibo.github.io/architettura-degli-elaboratori/"
-        class="wip"
-        >Architettura degli elaboratori(WIP)</a
-      >
+      {% assign doclist = site.pages %}
+      <ul>
+        {% for doc in doclist %}
+        <li><a href="{{ site.baseurl }}{{ doc.url }}">{{ doc.url }}</a></li>
+
+        <a href="{{ site.baseurl }}{{ doc.url }}"
+           >{{doc.name}}</a
+        >
+        {% endfor %}
+      </ul>
     </div>
 
-   {% assign doclist = site.pages | sort: 'url'  %}
-    <ul>
-       {% for doc in doclist %}
-            <li><a href="{{ site.baseurl }}{{ doc.url }}">{{ doc.url }}</a></li>
-        {% endfor %}
-    </ul>
 
     <div class="anno">
       <h2>Secondo anno</h2>
       <hr />
       <!-- <a href="https://matunibo.github.io/linguaggi-di-programmazione/"
-        >Linguaggi di programmazione</a
+        >linguaggi di programmazione</a
       >
       <a href="https://matunibo.github.io/sistemi-operativi/"
         >Sistemi operativi</a
