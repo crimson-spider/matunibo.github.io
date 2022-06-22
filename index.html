@@ -1,6 +1,5 @@
 ---
 layout: post
-title: test
 ---
 <!DOCTYPE html>
 <html lang="it">
@@ -141,11 +140,16 @@ title: test
     <div class="anno">
       <h2>Primo anno</h2>
       <hr />
-      {% for file in site.static_files %}
-      {% if file.extname == ".pdf" -%}
-      * [{{ file.path }}]({{ site.baseurl }}{{ file.path }})
-      {%- endif %}
+      {% assign files = "content/" | list_folders %}
+      {% for file in files %}
+      {% unless file contains 'index.html' %}
+        <a href="{{ site.baseurl}}/content/{{ file }}"
+           >{{file}}</a
+        >
+      {% endunless %}
       {% endfor %}
+
+
 
     </div>
 
